@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cloud2"
+    tools:context=".ui.actions.ActionsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+<!--
+        <TextView
+            android:id="@+id/text_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginHorizontal="5dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#fff"
+            app:layout_constraintVertical_bias="0.958"
+            tools:ignore="RtlCompat" />
+-->
+
+
+
+        <!--android:layout_alignTop="@+id/text_actions"-->
+        <ListView
+            android:id="@+id/actions_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:focusable="false"
+            android:foregroundGravity="center"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ListView>
+<!--
+        <Button
+            android:id="@+id/button"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginVertical="5dp"
+            android:text="add"
+            android:background="@drawable/button_style"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+            -->
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

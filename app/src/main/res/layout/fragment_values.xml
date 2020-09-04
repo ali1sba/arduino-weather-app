@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    tools:context=".ui.values.ValuesFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+             />
+        <com.anychart.AnyChartView
+            android:id="@+id/any_chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+
+        <com.anychart.AnyChartView
+            android:id="@+id/any_chart_view1"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+
+        <com.anychart.AnyChartView
+            android:id="@+id/any_chart_view2"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+
+        <com.anychart.AnyChartView
+            android:id="@+id/any_chart_view3"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+
+</LinearLayout>
+
+
+
+
+
+
+</ScrollView>

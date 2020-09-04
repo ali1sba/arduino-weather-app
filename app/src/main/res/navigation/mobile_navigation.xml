@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.android.esiweather.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_notification"
+            app:destination="@id/nav_notification" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_values"
+            app:destination="@id/nav_values" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_graphs"
+            app:destination="@id/nav_graphs" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_actions"
+            app:destination="@id/nav_actions" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.example.android.esiweather.ui.notification.NotificationFragment"
+        android:label="@string/menu_notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_values"
+        android:name="com.example.android.esiweather.ui.values.ValuesFragment"
+        android:label="@string/menu_values"
+        tools:layout="@layout/fragment_values" />
+
+    <fragment
+        android:id="@+id/nav_graphs"
+        android:name="com.example.android.esiweather.ui.graphs.GraphsFragment"
+        android:label="@string/menu_graphs"
+        tools:layout="@layout/fragment_graphs" />
+
+    <fragment
+        android:id="@+id/nav_actions"
+        android:name="com.example.android.esiweather.ui.actions.ActionsFragment"
+        android:label="@string/menu_actions"
+        tools:layout="@layout/fragment_actions" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.android.esiweather.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

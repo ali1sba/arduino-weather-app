@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "256726388656",
+    "firebase_url": "https://arduino-webserver-esisba.firebaseio.com",
+    "project_id": "arduino-webserver-esisba",
+    "storage_bucket": "arduino-webserver-esisba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256726388656:android:6eec94dab32f6051ac1075",
+        "android_client_info": {
+          "package_name": "com.alitest.android.esiweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256726388656-fe3eg4srj4kukim4o54iuih7e4tl6ti7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMDnyiK7RrjCWzVCelQhsCs094C4iC8vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "256726388656-fe3eg4srj4kukim4o54iuih7e4tl6ti7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

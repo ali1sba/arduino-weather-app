@@ -18,6 +18,11 @@ import com.example.android.esiweather.R;
 import com.example.android.esiweather.Signup;
 import com.example.android.esiweather.ui.settings.SettingsViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SettingsFragment extends Fragment {
 
@@ -29,6 +34,25 @@ public class SettingsFragment extends Fragment {
                 ViewModelProviders.of(this).get(SettingsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        final TextView username = root.findViewById(R.id.username);
+        final TextView email = root.findViewById(R.id.email);
+        final TextView phonenember = root.findViewById(R.id.phone_nember);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child("users/" + FirebaseAuth.getInstance().getUid());
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                email.setText("email : " + snapshot.child("email").getValue().toString());
+                phonenember.setText("phone nember : " + snapshot.child("phone_number").getValue().toString());
+                username.setText("username : " + snapshot.child("username").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
         Button Logout = (Button) root.findViewById(R.id.logout);

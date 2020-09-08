@@ -113,7 +113,7 @@ int b = 0;
                             title = timeKeySnapshot.getKey();
                             int w =1;
                             for (DataSnapshot valKeySnapshot2 : valKeySnapshot.getChildren()) {
-                                if (w == 1) {
+                                if (w == 2) {
                                     //     Log.d("tag", valKeySnapshot.getValue().toString());
                                     temp = valKeySnapshot2.getValue().toString();
                                     Log.d("temp", temp);
@@ -123,7 +123,7 @@ int b = 0;
                                 } else if (w == 5) {
                                     presion = valKeySnapshot2.getValue().toString();
                                     Log.d("presion", presion);
-                                } else if (w == 7) {
+                                } else if (w == 8) {
                                     rain = valKeySnapshot2.getValue().toString();
                                     Log.d("rain", rain);
                                 }

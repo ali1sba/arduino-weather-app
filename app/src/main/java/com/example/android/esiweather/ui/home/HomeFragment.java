@@ -77,6 +77,76 @@ public class HomeFragment extends Fragment {
         //myRef.setValue("Hello, World!");
         // Read from the database
 
+        iconsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot2) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
+
+                String x =snapshot2.child("weather").getValue().toString();
+                weather.setText(x);
+
+                if (x.equals("cloud") ){
+                    imageweather.setImageResource(R.drawable.cloud);
+                }
+                else if(x.equals("sun")){
+                    imageweather.setImageResource(R.drawable.sun);
+                }
+                else if(x.equals("rain")){
+                    imageweather.setImageResource(R.drawable.rain);
+                }
+                else {
+                    imageweather.setImageResource(R.drawable.snow);
+                };
+
+
+                sunRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // This method is called once with the initial value and again
+                        // whenever data at this location is updated.
+                        //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
+                        time_sun_rise.setText(snapshot.child("sun-rise").getValue().toString());
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                sunRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // This method is called once with the initial value and again
+                        // whenever data at this location is updated.
+                        //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
+                        time_sun_set.setText(snapshot.child("sun-set").getValue().toString());
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+
+
+
 
 
         myRef.addValueEventListener(new ValueEventListener() {
@@ -149,76 +219,6 @@ public class HomeFragment extends Fragment {
                             };
                         };
 
-
-
-
-                        iconsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot2) {
-                                // This method is called once with the initial value and again
-                                // whenever data at this location is updated.
-                                //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
-
-                                String x =snapshot2.child("weather").getValue().toString();
-                                weather.setText(x);
-
-                                if (x.equals("cloud") ){
-                                    imageweather.setImageResource(R.drawable.cloud);
-                                }
-                                else if(x.equals("sun")){
-                                    imageweather.setImageResource(R.drawable.sun);
-                                }
-                                else if(x.equals("rain")){
-                                    imageweather.setImageResource(R.drawable.rain);
-                                }
-                                else {
-                                    imageweather.setImageResource(R.drawable.snow);
-                                };
-
-
-                                sunRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        // This method is called once with the initial value and again
-                                        // whenever data at this location is updated.
-                                        //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
-                                        time_sun_rise.setText(snapshot.child("sun-rise").getValue().toString());
-
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                });
-                                sunRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        // This method is called once with the initial value and again
-                                        // whenever data at this location is updated.
-                                        //final String convertedTime2 = DateFormat.format(snapshot.child("sun-rise").getValue().toString());
-                                        time_sun_set.setText(snapshot.child("sun-set").getValue().toString());
-
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                });
-
-
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-
-                        });
 
 
 

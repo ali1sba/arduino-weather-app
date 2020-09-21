@@ -39,6 +39,9 @@ public class Login extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBarlogin);
         progressBar.setVisibility(View.INVISIBLE);
+
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,12 +71,23 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Log.d("fin", "signup done");
-                                    Toast.makeText(Login.this, "SignInWithEmail:succes.",
-                                            Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext() , MainActivity.class));
+                                    if (fAuth.getCurrentUser().isEmailVerified()){
+                                        Log.d("fin", "signup done");
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                        Toast.makeText(Login.this, "SignInWithEmail:success.",
+                                                Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext() , MainActivity.class));
+                                    }else{
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                        Toast.makeText(Login.this, "verification failed",
+                                                Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext() , verif.class));
+                                        finish();
+                                    }
+
                                 }else {
                                     Log.d("fin", "signup error");
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     Toast.makeText(Login.this, "Authentication failed.  " + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 }

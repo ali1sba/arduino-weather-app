@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cloud2"
+    android:background="@drawable/cloud8"
     tools:context=".ui.actions.ActionsFragment">
 
     <RelativeLayout
@@ -42,13 +42,12 @@
             android:id="@+id/actions_listview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:scrollbarStyle="outsideInset"
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:focusable="false"
             android:foregroundGravity="center"
             android:paddingVertical="16dp"
             app:layout_constraintEnd_toEndOf="@+id/button"
@@ -56,21 +55,32 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </ListView>
-<!--
-        <Button
-            android:id="@+id/button"
 
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progressBaraction"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:layout_marginHorizontal="35dp"
-            android:layout_marginVertical="5dp"
-            android:text="add"
-            android:background="@drawable/button_style"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-            -->
+            android:layout_below="@+id/actions_listview"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="189dp" />
+
+
+        <!--
+                <Button
+                    android:id="@+id/button"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginVertical="5dp"
+                    android:text="add"
+                    android:background="@drawable/button_style"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+                    -->
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

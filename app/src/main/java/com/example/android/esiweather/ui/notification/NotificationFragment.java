@@ -3,6 +3,7 @@ package com.example.android.esiweather.ui.notification;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -41,6 +43,7 @@ import java.util.Objects;
 public class NotificationFragment extends Fragment {
     final ArrayList<listitemfornotif.ListItemForNotif> item = new ArrayList<listitemfornotif.ListItemForNotif>();
     final NotificationFragment.MyCustomAdapter myadpter = new NotificationFragment.MyCustomAdapter(item);
+
     private NotificationViewModel notificationViewModel;
     private Context mContext;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -59,7 +62,7 @@ public class NotificationFragment extends Fragment {
                 ViewModelProviders.of(this).get(NotificationViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_notification, container, false);
 
-
+        final CardView cardViewdellet =(CardView) root.findViewById(R.id.cardclearall);
 
         final ListView ls = (ListView) root.findViewById(R.id.actions_listview_notification);
 
@@ -189,14 +192,13 @@ public class NotificationFragment extends Fragment {
             }
         });*/
 
-        Button button = root.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        cardViewdellet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               notifRef.removeValue();
-               item.clear();
-               myadpter.notifyDataSetChanged();
-
+                notifRef.removeValue();
+                item.clear();
+                myadpter.notifyDataSetChanged();
             }
         });
 
@@ -241,6 +243,8 @@ public class NotificationFragment extends Fragment {
             TextView txtname = (TextView) view1.findViewById(R.id.text_notif);
             String key ;
             txtname.setText(Items.get(i).notif);
+            txtname.setTypeface(Typeface.SERIF);
+            txtname.setTypeface(Typeface.DEFAULT_BOLD);
             key = item.get(i).key;
             return view1;
 

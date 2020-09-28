@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cloud5"
+    android:background="@drawable/cloud8"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -20,19 +20,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+<androidx.cardview.widget.CardView
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
 
+    app:cardCornerRadius="15sp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#014b82"
+
+    >
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
+            android:layout_margin="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wind"
-                android:textColor="#B3FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="20dp">
 
             </TextView>
@@ -42,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="--"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="40dp"
                 android:textStyle="bold">
 
@@ -52,26 +63,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="KM/H"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="20dp">
 
             </TextView>
 
 
         </LinearLayout>
-
-        <LinearLayout
+</androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            app:cardCornerRadius="20sp"
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="#014b82"
+           >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
+            android:layout_margin="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rain"
-                android:textColor="#B3FFFFFF"
+                android:textColor="#FFFF"
                 android:textSize="20dp">
 
             </TextView>
@@ -81,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="--"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="40dp"
                 android:textStyle="bold">
 
@@ -91,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="mm"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="20dp"
                 android:textStyle="bold">
 
@@ -99,19 +121,30 @@
 
 
         </LinearLayout>
-
-        <LinearLayout
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            app:cardCornerRadius="20sp"
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="#014b82"
+            >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
+            android:layout_margin="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Humidty"
-                android:textColor="#B3FFFFFF"
+                android:textColor="#FFF"
                 android:textSize="20dp">
 
             </TextView>
@@ -121,7 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="--"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="40dp"
                 android:textStyle="bold">
 
@@ -131,18 +164,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="%"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhite"
                 android:textSize="20dp"
                 android:textStyle="bold">
 
             </TextView>
 
-
         </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
-
 
     <TextView
         android:id="@+id/text_date"
@@ -150,7 +182,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="18dp"
         android:text="--:--:--"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -176,7 +208,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="18dp"
         android:text="--:--"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:textSize="20dp"
        />
     <ImageView
@@ -191,7 +223,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="18dp"
         android:text="--:--"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:textSize="20dp"
         />
 
@@ -203,7 +235,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="18dp"
         android:text="- - °"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:textSize="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -249,10 +281,10 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="4dp"
         android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="35dp"
-        android:background="#80FFFFFF"
+        android:background="#000"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -265,7 +297,7 @@
         android:layout_marginTop="10dp"
         android:paddingLeft="18dp"
         android:text="--:--"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

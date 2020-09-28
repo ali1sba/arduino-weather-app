@@ -5,13 +5,13 @@
     <string name="nav_header_title">Esi Weather station </string>
     <string name="nav_header_subtitle">esisbameteo.ddns.net</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Profile</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_notification">Notification</string>
     <string name="menu_values">Values</string>
     <string name="menu_graphs">Graphs</string>
     <string name="menu_actions">Actions</string>
-    <string name="menu_settings">Settings</string>
-    <string name="menu_logout">Logout</string>
+    <string name="menu_settings">Profile</string>
+    <string name="menu_logout">Profile</string>
 </resources>

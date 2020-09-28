@@ -7,6 +7,20 @@
     android:background="#82e4ef"
     tools:context="com.example.android.esiweather.verif">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="wellcome"
+        android:textSize="90dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
@@ -22,9 +36,9 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="300dp"
-android:layout_marginTop="20dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="232dp"
         android:src="@drawable/verif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,16 +58,16 @@ android:layout_marginTop="20dp"
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="please verif your mail to activate your account"
+        android:paddingHorizontal="20dp"
         android:gravity="center"
+        android:text="please verif your mail to activate your account"
         android:textColor="#000"
         android:textSize="30dp"
+        android:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.222" />

@@ -3,6 +3,7 @@ package com.example.android.esiweather.ui.actions;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,9 +42,10 @@ public class ActionsFragment extends Fragment {
     private ActionsViewModel actionsViewModel;
     private Context mContext;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference actionRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() +"/actions");
+    final DatabaseReference actionRef = database.getReference().child("actions/");
     int i;
     int keyforupdatethedatabase;
+    ProgressBar progressBar;
 
 
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,7 +62,8 @@ public class ActionsFragment extends Fragment {
         //myRef.setValue("Hello, World!");
         // Read from the database
         final ListView ls = (ListView) root.findViewById(R.id.actions_listview);
-
+        final ProgressBar progressBar = root.findViewById(R.id.progressBaraction);
+        progressBar.setVisibility(View.VISIBLE);
         actionRef.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -114,7 +118,7 @@ public class ActionsFragment extends Fragment {
                     item.remove(item.size() - 1);
                 }
 
-
+                progressBar.setVisibility(View.INVISIBLE);
             }
 
 
@@ -247,13 +251,16 @@ public class ActionsFragment extends Fragment {
             TextView txtname = (TextView) view1.findViewById(R.id.text_action);
             final TextView state = (TextView) view1.findViewById(R.id.action_switch_state);
             txtname.setText(Items.get(i).action);
+            txtname.setTypeface(Typeface.DEFAULT_BOLD);
+            txtname.setTypeface(Typeface.SERIF);
+            txtname.setTextSize(20);
             state.setText(Items.get(i).state);
             if (item.get(i).state.equals("OFF")) {
                 state.setTextColor(Color.RED);
             } else {
                 state.setTextColor(Color.GREEN);
             }
-
+            state.setTextSize(20);
 
             return view1;
 

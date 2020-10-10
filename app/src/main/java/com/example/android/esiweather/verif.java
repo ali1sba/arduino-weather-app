@@ -17,7 +17,7 @@ import java.util.Objects;
 public class verif extends AppCompatActivity {
     FirebaseAuth fAuth;
     Button verif ;
-    ProgressBar progressBar;
+  //  ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +25,14 @@ public class verif extends AppCompatActivity {
 
 
 
-        progressBar = findViewById(R.id.progressBarVerif);
-        progressBar.setVisibility(View.INVISIBLE);
+       // progressBar = findViewById(R.id.progressBarVerif);
+       // progressBar.setVisibility(View.INVISIBLE);
         verif =findViewById(R.id.button2);
         verif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                Log.d("f5", FirebaseAuth.getInstance().getCurrentUser().getEmail());
+              //  progressBar.setVisibility(View.VISIBLE);
+               // Log.d("f5", FirebaseAuth.getInstance().getCurrentUser().getEmail());
                // Log.d("f5", FirebaseAuth.getInstance().getCurrentUser().().);
 
                     startActivity(new Intent(getApplicationContext() , Login.class));

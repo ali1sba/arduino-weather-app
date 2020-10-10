@@ -154,9 +154,9 @@ public class HomeFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                Log.d(TAG, " befor: ");
+               // Log.d(TAG, " befor: ");
                 // Map<String, String> mape =dataSnapshot.getValue(Map.class);
-                Log.d(TAG, " after: ");
+              //  Log.d(TAG, " after: ");
                 final String temp = dataSnapshot.child("temp").getValue().toString();
                 String rain = dataSnapshot.child("rain").getValue().toString();
                 String wind = dataSnapshot.child("wind").getValue().toString();
@@ -195,27 +195,27 @@ public class HomeFragment extends Fragment {
 
                         if (Float.parseFloat(tempstate) == 1 ){
                             if ( Float.parseFloat(tempmax)  <= Float.parseFloat(temp) ){
-                                Log.d(TAG, "  Integer.parseInt(tempmax)  <= Integer.parseInt(temp)  true ");
+                             //   Log.d(TAG, "  Integer.parseInt(tempmax)  <= Integer.parseInt(temp)  true ");
                                 notifRef.child("notif_stack").push().setValue("la température est plus que " + tempmax + " !!  temp = " + temp  );
                             }
                             else if(Float.parseFloat(tempmin)  >= Float.parseFloat(temp) ){
-                                notifRef.child("notif_stack").push().setValue("la température est moin que " + tempmin + " !!" );
+                                notifRef.child("notif_stack").push().setValue("la température est moin que " + tempmin + " !!  temp = " + temp );
                             };
                         };
                         if (Float.parseFloat(pressurestate) == 1 ){
                             if ( Float.parseFloat(pressuremax)  <= Float.parseFloat(pressure) ){
-                                notifRef.child("notif_stack").push().setValue("la Pression est plus que " + pressuremax + " !!" );
+                                notifRef.child("notif_stack").push().setValue("la Pression est plus que " + pressuremax + " !!  Pression = " + pressure  );
                             }
                             else if( Float.parseFloat(pressuremin)  >= Float.parseFloat(pressure) ){
-                                notifRef.child("notif_stack").push().setValue("la Pression est moin que " + pressuremin + " !!" );
+                                notifRef.child("notif_stack").push().setValue("la Pression est moin que " + pressuremin + " !!  Pression = " + pressure );
                             };
                         };
                         if (Float.parseFloat(humidtystate) == 1 ){
                             if ( Integer.parseInt(humidtymax)  <= Float.parseFloat(humidty) ){
-                                notifRef.child("notif_stack").push().setValue("l'humidty est plus que " + humidtymax + " !!" );
+                                notifRef.child("notif_stack").push().setValue("l'humidty est plus que " + humidtymax + " !!  humidty = " + humidty );
                             }
                             else if( Float.parseFloat(humidtymin)  >= Float.parseFloat(humidty) ){
-                                notifRef.child("notif_stack").push().setValue("l'humidty est moin que " + humidtymin + " !!" );
+                                notifRef.child("notif_stack").push().setValue("l'humidty est moin que " + humidtymin + " !!  humidty = " + humidty );
                             };
                         };
 
@@ -253,7 +253,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+               // Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
 

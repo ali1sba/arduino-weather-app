@@ -72,15 +72,15 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     if (fAuth.getCurrentUser().isEmailVerified()){
-                                        Log.d("fin", "signup done");
+                                       // Log.d("fin", "signup done");
                                         progressBar.setVisibility(View.INVISIBLE);
-                                        Toast.makeText(Login.this, "SignInWithEmail:success.",
-                                                Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(Login.this, "SignInWithEmail:success.",
+                                         //       Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getApplicationContext() , MainActivity.class));
                                     }else{
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                        Toast.makeText(Login.this, "verification failed",
-                                                Toast.LENGTH_SHORT).show();
+                                       // progressBar.setVisibility(View.INVISIBLE);
+                                      //  Toast.makeText(Login.this, "verification failed",
+                                       //         Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getApplicationContext() , verif.class));
                                         finish();
                                     }
@@ -88,8 +88,8 @@ public class Login extends AppCompatActivity {
                                 }else {
                                     Log.d("fin", "signup error");
                                     progressBar.setVisibility(View.INVISIBLE);
-                                    Toast.makeText(Login.this, "Authentication failed.  " + task.getException(),
-                                            Toast.LENGTH_SHORT).show();
+                                 //   Toast.makeText(Login.this, "Authentication failed.  " + task.getException(),
+                                   //         Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

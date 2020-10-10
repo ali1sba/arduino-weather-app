@@ -43,14 +43,15 @@ public class Signup extends AppCompatActivity {
         progressBar.setVisibility(View.INVISIBLE);
 
         if (fAuth.getCurrentUser() != null) {
-            if (fAuth.getCurrentUser().isEmailVerified()){
-                startActivity(new Intent(getApplicationContext() , MainActivity.class));
+            if (fAuth.getCurrentUser().isEmailVerified()) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
-            }else{startActivity(new Intent(getApplicationContext() , verif.class));
-                finish();}
+            } //else {
+              //  startActivity(new Intent(getApplicationContext(), verif.class));
+              //  finish();
+           // }
 
         }
-
 
         singup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,28 +78,29 @@ public class Signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Log.d("fin", "signup done");
+                            Toast.makeText(Signup.this, "SignUpWithEmail:succes.",
+                                    Toast.LENGTH_LONG).show();
+                            DatabaseReference userRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() );
+                            userRef.child("email").setValue(email);
+                            userRef.child("phone_number").setValue(phone);
+                            userRef.child("username").setValue(username);
+                            DatabaseReference notifRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() +"/notif");
+                            notifRef.child("hum_checkbox").setValue(0);
+                            notifRef.child("humidity_valeur_max").setValue("0");
+                            notifRef.child("humidity_valeur_min").setValue("0");
+                            notifRef.child("press_checkbox").setValue(0);
+                            notifRef.child("pressure_valeur_max").setValue("0");
+                            notifRef.child("pressure_valeur_min").setValue("0");
+                            notifRef.child("temp_checkbox").setValue(0);
+                            notifRef.child("temperature_valeur_max").setValue("0");
+                            notifRef.child("temperature_valeur_min").setValue("0");
                             fAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
 
-                                        Log.d("fin", "signup done");
-                                        Toast.makeText(Signup.this, "SignUpWithEmail:succes.",
-                                                Toast.LENGTH_LONG).show();
-                                        DatabaseReference userRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() );
-                                        userRef.child("email").setValue(email);
-                                        userRef.child("phone_number").setValue(phone);
-                                        userRef.child("username").setValue(username);
-                                        DatabaseReference notifRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() +"/notif");
-                                        notifRef.child("hum_checkbox").setValue(0);
-                                        notifRef.child("humidity_valeur_max").setValue("0");
-                                        notifRef.child("humidity_valeur_min").setValue("0");
-                                        notifRef.child("press_checkbox").setValue(0);
-                                        notifRef.child("pressure_valeur_max").setValue("0");
-                                        notifRef.child("pressure_valeur_min").setValue("0");
-                                        notifRef.child("temp_checkbox").setValue(0);
-                                        notifRef.child("temperature_valeur_max").setValue("0");
-                                        notifRef.child("temperature_valeur_min").setValue("0");
+
                                        // final DatabaseReference actionRef = database.getReference().child("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() +"/actions");
                                        // actionRef.child("action1").child("name").setValue("test action 1");
                                       //  actionRef.child("action1").child("state").setValue("off");
